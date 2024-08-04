@@ -4,7 +4,7 @@ import fullyCustomizable from "../../public/icon-fully-customizable.svg";
 
 const Info = () => {
   return (
-    <section className="bg-lightGray max-sm:min-h-[100vh]">
+    <section className="bg-lightGray max-sm:min-h-[100vh] pb-5">
       <div className="container">
         <div className="flex-center flex-col py-3">
           <h4 className="text-darkViolet font-bold text-center text-lg sm:text-xl pb-3">
@@ -56,7 +56,7 @@ const Info = () => {
           </div>
 
           <div
-            className="card mt-24"
+            className="card sm:mt-24"
           >
             <div className="card-icon">
               <img src={fullyCustomizable} alt="" className="size-6" />
@@ -71,27 +71,6 @@ const Info = () => {
               </p>
             </div>
           </div>
-
-          {/* {infoBoxes.map((infoBox, index) => (
-            <div
-              key={infoBox.id}
-              className={`relative w-48 sm:w-56 h-40 bg-white shadow-lg px-3 pt-9 pb-2 mb-8 rounded-lg leading-7 ${
-                index > 0 ? `sm:mt-${index * 10}` : 'sm:mt-0'
-              }`}
-            >
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-3 bg-darkViolet rounded-full">
-                <img
-                  src={infoBox.icon}
-                  alt={infoBox.title}
-                  className="size-6"
-                />
-              </div>
-              <h5 className="text-center text-darkViolet font-bold pb-1">
-                {infoBox.title}
-              </h5>
-              <p className="paragraph">{infoBox.description}</p>
-            </div>
-          ))} */}
         </div>
       </div>
     </section>

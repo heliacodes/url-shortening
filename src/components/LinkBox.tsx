@@ -33,6 +33,7 @@ const LinkBox = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<FormData>({
     resolver: zodResolver(schema),
@@ -45,6 +46,7 @@ const LinkBox = () => {
       return updatedUrls;
     });
     mutate(data.url);
+    reset();
   };
 
   const handleDelete = (index : number) => {
@@ -63,7 +65,7 @@ const LinkBox = () => {
 
   return (
     <section className="max-h-[1000vh] w-full link-section py-5">
-      <div className="h-32 sm:h-28 py-2 px-5 sm:py-3 sm:px-10 bg-darkViolet container relative rounded-lg">
+      <div className="container h-32 sm:h-28 py-2 px-5 sm:py-3 sm:px-10 relative rounded-lg link-box-background">
         <div className="mx-auto w-full h-full flex-center max-sm:flex-col">
           <form
             className="w-full sm:flex sm:items-center sm:justify-between sm:gap-2"
@@ -81,13 +83,15 @@ const LinkBox = () => {
                 }`}
               />
               {errors.url && (
-                <i className="text-red text-xs absolute top-full left-0 bottom-0">{errors.url.message}</i>
+                <i className="text-red text-xs absolute top-full left-0 bottom-0">
+                  {errors.url.message}
+                </i>
               )}
             </div>
             <button
               type="submit"
               disabled={isLoading}
-              className="button rounded-md px-5 text-nowrap max-sm:w-full font-extrabold max-sm:mt-6"
+              className="button rounded-md px-5 text-nowrap max-sm:w-full font-extrabold max-sm:mt-6 hover:opacity-90"
             >
               {isLoading ? "Shortening..." : "Shorten It!"}
             </button>
@@ -96,7 +100,12 @@ const LinkBox = () => {
       </div>
       <div className="mt-4">
         {submittedUrls.map((url, index) => (
-          <LinkItem key={index} longUrl={url} shortUrl={shortenedUrls[index]} onDelete={() => handleDelete(index)} />
+          <LinkItem
+            key={index}
+            longUrl={url}
+            shortUrl={shortenedUrls[index]}
+            onDelete={() => handleDelete(index)}
+          />
         ))}
       </div>
     </section>

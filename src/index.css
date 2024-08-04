@@ -21,11 +21,15 @@
 
 /* link section background color separation */
 .link-section {
-  background: linear-gradient(to bottom, white 80px,  #f0f5f1 10%);
+  background: linear-gradient(to bottom, white 80px, #f0f5f1 10%);
+}
+
+.link-box-background {
+  @apply bg-darkViolet bg-[url('../../public/bg-shorten-mobile.svg')] sm:bg-[url('../../public/bg-shorten-desktop.svg')] bg-no-repeat bg-cover;
 }
 
 /* cards in info section */
-.card{
+.card {
   @apply relative w-48 sm:w-56 h-40 sm:h-44 bg-white shadow-lg px-3 pt-9 pb-2 mb-8 rounded-lg leading-7;
 }
 
@@ -34,5 +38,10 @@
 }
 
 .card-heading {
-  @apply text-center text-darkViolet font-bold pb-1 pt-1 sm:text-start;
+  @apply text-center text-darkViolet font-bold pb-1 pt-1 sm:text-start text-nowrap;
+}
+
+/* cta */
+.cta-background {
+  @apply bg-darkViolet sm:bg-[url('../../public/bg-boost-desktop.svg')] bg-[url('../../public/bg-boost-mobile.svg')] sm:bg-no-repeat bg-cover;
 }

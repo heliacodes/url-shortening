@@ -13,7 +13,7 @@ const NavBar = () => {
       <header className="w-full py-8 sm:py-12">
         <nav className="container flex items-center justify-between">
           <div className="flex items-center justify-between gap-10">
-            <img src={logo} alt="" height={50} width={100} />
+            <img src={logo} alt="" height={50} width={100} color="gray"/>
             <ul className="max-sm:hidden flex items-center gap-7 justify-between text-gray text-sm">
               {navLinks.map((link) => (
                 <li key={link}>

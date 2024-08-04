@@ -2,7 +2,7 @@ import hero from "../../public/illustration-working.svg";
 
 const Hero = () => {
   return (
-    <section>
+    <section className="overflow-x-hidden">
       <div className="container pb-14 sm:flex sm:flex-row-reverse sm:gap-4">
         <img
           src={hero}
